@@ -11,8 +11,14 @@
     <string name="title_activity_recent">recent</string>
     <string name="title_activity_profile">profile</string>
     <string name="title_activity_vehicle">vehicle</string>
+    <string name="title_restaurant_name">Sandwich House</string>
+    <string name="Items">Items</string>
+    <string name="Delivery">Delivered On</string>
+    <string name="Status">Status</string>
+    <string name="request_id">Request Id</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bottom">BottomActivity</string>
 
 </resources>
