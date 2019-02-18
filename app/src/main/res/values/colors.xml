@@ -2,11 +2,15 @@
 <resources>
     <color name="colorPrimary">#3e4b46</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="cardcolor">#f7f7f7</color>
     <color name="bgcolor">#f7f7f7</color>
-
-
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#476c6e</color>
+    <color name="endblue">#476c6e</color>
+    <color name="light_black">#504f4f</color>
+    <color name="white">#fafafa</color>
+    <color name="black">#000000</color>
 
 
 

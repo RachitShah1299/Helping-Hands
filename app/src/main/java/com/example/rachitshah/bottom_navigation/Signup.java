@@ -13,17 +13,12 @@ public class Signup extends AppCompatActivity {
     EditText mail,mophone,pswd,usrusr;
     TextView lin,sup;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        sup = (TextView) findViewById(R.id.sup);
-        lin = (TextView) findViewById(R.id.lin);
-        usrusr = (EditText) findViewById(R.id.usrusr);
-        pswd = (EditText) findViewById(R.id.pswrdd);
-        mail = (EditText) findViewById(R.id.mail);
-        mophone = (EditText) findViewById(R.id.mobphone);
+
+        sup = (TextView) findViewById(R.id.sbtn);
 
         sup.setOnClickListener(new View.OnClickListener()
         {
@@ -32,14 +27,6 @@ public class Signup extends AppCompatActivity {
             {
                 Intent it = new Intent(Signup.this,Main2Activity.class);
                 startActivity(it);
-            }
-        });
-
-        lin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Signup.this, Login.class);
-                startActivity(i);
             }
         });
 

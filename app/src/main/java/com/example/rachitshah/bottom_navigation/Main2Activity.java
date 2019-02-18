@@ -40,14 +40,7 @@ public class Main2Activity extends AppCompatActivity {
                         recent_ft.replace(R.id.fragment_f, fragment);
                         recent_ft.commit();
                         return true;
-                    case R.id.navigation_vehicle:
-                        fragment =new VehicleFragment();
-                        FragmentManager vehicle_fm = getSupportFragmentManager();
-                        FragmentTransaction vehicle_ft = vehicle_fm.beginTransaction();
-                        vehicle_ft.replace(R.id.fragment_f, fragment);
-                        vehicle_ft.commit();
 
-                        return true;
                     case R.id.navigation_profile:
                         fragment =new profileFragment();
                         FragmentManager profile_fm = getSupportFragmentManager();

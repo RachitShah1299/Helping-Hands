@@ -13,11 +13,6 @@
         android:title="@string/title_recent" />
 
     <item
-        android:id="@+id/navigation_vehicle"
-        android:icon="@drawable/motorcycle_black"
-        android:title="@string/title_vehicle" />
-
-    <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/account_circle_black"
         android:title="@string/title_profile" />

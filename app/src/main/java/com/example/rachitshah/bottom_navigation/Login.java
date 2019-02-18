@@ -12,26 +12,17 @@ import android.widget.TextView;
 public class Login extends AppCompatActivity {
 
     EditText pswd,usrusr;
-    TextView sup,lin;
+    TextView sup,lin, forgotpass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        forgotpass = (TextView) findViewById(R.id.forgot_pass);
         lin = findViewById(R.id.lin);
         usrusr = findViewById(R.id.usrusr);
         pswd = findViewById(R.id.pswrdd);
         sup = findViewById(R.id.sup);
-        /*
-        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
-
-        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
-        lin.setTypeface(custom_font1);
-        sup.setTypeface(custom_font);
-        usrusr.setTypeface(custom_font);
-        pswd.setTypeface(custom_font);
-        */
         sup.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -49,6 +40,14 @@ public class Login extends AppCompatActivity {
             {
                 Intent it = new Intent(Login.this, Main2Activity.class);
                 startActivity(it);
+            }
+        });
+
+        forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Forgotpassword.class);
+                startActivity(intent);
             }
         });
 

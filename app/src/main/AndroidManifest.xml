@@ -13,22 +13,24 @@
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2" />
-
-
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".Login" >
-
-        </activity>
-        <activity android:name=".Signup">
-
-        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Signup" />
+        <activity android:name=".chooser" />
+        <activity android:name=".Forgotpassword" />
+        <activity android:name=".Restaurant.Res_Login" />
+        <activity android:name=".Restaurant.Res_Signup" />
+        <activity android:name=".Restaurant.Res_Home" />
+        <activity android:name=".Restaurant.Res_Profile" />
+        <activity android:name=".Feedback" />
+        <activity android:name=".Restaurant.Res_Recent" />
+        <activity android:name=".Restaurant.Res_Feedback"></activity>
     </application>
 
 </manifest>

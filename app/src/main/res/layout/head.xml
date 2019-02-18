@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_160sdp"
+    android:background="@color/startblue">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img"
+        android:src="@drawable/usrusr"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_5sdp"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_below="@+id/img"
+        android:text="Anish Jain"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/graylight"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_18sdp"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/eid"
+        android:layout_below="@+id/name"
+        android:text="jain.anish94@gmail.com"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginLeft="@dimen/_18sdp"
+        android:textColor="@color/graylight"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
