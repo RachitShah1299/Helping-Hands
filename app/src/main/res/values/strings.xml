@@ -22,5 +22,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_bottom">BottomActivity</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
 
+    <string name="slide_1_title">Hello There!</string>
+    <string name="slide_1_desc">Welcome to Helping Hands</string>
+
+    <string name="slide_2_title">Hunger Hero</string>
+    <string name="slide_2_desc">You are our Hunger Hero. Help us fight Hunger!!</string>
+
+    <string name="slide_3_title">Signup and get Started</string>
+    <string name="slide_3_desc">Signup and get started by delivering food or by donating food!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 </resources>

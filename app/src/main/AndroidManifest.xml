@@ -13,13 +13,7 @@
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2" />
-        <activity android:name=".SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".Login" />
         <activity android:name=".Signup" />
         <activity android:name=".chooser" />
@@ -31,8 +25,13 @@
         <activity android:name=".Feedback" />
         <activity android:name=".Restaurant.Res_Recent" />
         <activity android:name=".Restaurant.Res_Feedback" />
-        <activity android:name=".demo" />
-        <activity android:name=".Restaurant.demo"></activity>
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
