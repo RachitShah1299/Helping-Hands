@@ -22,6 +22,7 @@
 
 
                 <ImageView
+
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
@@ -35,6 +36,7 @@
                     android:src="@drawable/camm" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_alignParentTop="true"
@@ -59,6 +61,7 @@
                 android:layout_height="match_parent">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/email"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
@@ -73,6 +76,7 @@
                 android:layout_height="match_parent">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/phone"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
@@ -87,6 +91,7 @@
                 android:layout_height="match_parent">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/address"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
@@ -101,6 +106,7 @@
                 android:layout_height="match_parent">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/password"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"

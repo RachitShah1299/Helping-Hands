@@ -21,17 +21,18 @@
 
         <EditText
             android:id="@+id/name"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
+
             android:layout_below="@+id/img"
             android:layout_centerHorizontal="true"
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:hint="   Volunteer Name"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/usrr"
             android:inputType="textPersonName"
-            android:textColor="@color/graylight"
             android:drawablePadding="@dimen/_5sdp"
-
             />
 
         <EditText
@@ -41,10 +42,11 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:hint="   Email Address"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             android:drawablePadding="@dimen/_5sdp"
 
             />
@@ -56,10 +58,11 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:hint="   Password"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/lock"
             android:inputType="textPassword"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             android:drawablePadding="@dimen/_5sdp"
 
             />
@@ -71,10 +74,11 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:hint="   Mobile Number"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/smartphone"
             android:inputType="phone"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             android:drawablePadding="@dimen/_5sdp"
 
             />
@@ -86,10 +90,11 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:hint="   Address"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/home"
             android:inputType="textPostalAddress"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             android:drawablePadding="@dimen/_5sdp"
             />
 
@@ -100,10 +105,11 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:hint="  Gender"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/gen"
             android:inputType="text"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             android:drawablePadding="@dimen/_5sdp"
             />
 
@@ -114,9 +120,10 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="match_parent"
             android:hint="   Birth Date"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/cal"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             android:drawablePadding="@dimen/_5sdp"
             />
         <EditText
@@ -126,10 +133,11 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:hint="   License Number"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/lic"
             android:inputType="text"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             android:drawablePadding="@dimen/_5sdp"
             />
 
@@ -141,9 +149,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_9sdp"
             android:text="Signup"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="16dp"
             android:background="@drawable/btn"
-            android:textColor="@color/graylight"
+            android:textColor="#fff"
+            android:textColorHint="#d9e5f3"
             />
 
         <TextView

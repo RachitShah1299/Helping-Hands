@@ -30,7 +30,9 @@
         <activity android:name=".Restaurant.Res_Profile" />
         <activity android:name=".Feedback" />
         <activity android:name=".Restaurant.Res_Recent" />
-        <activity android:name=".Restaurant.Res_Feedback"></activity>
+        <activity android:name=".Restaurant.Res_Feedback" />
+        <activity android:name=".demo" />
+        <activity android:name=".Restaurant.demo"></activity>
     </application>
 
 </manifest>
