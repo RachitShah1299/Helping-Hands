@@ -20,12 +20,15 @@ import com.example.rachitshah.bottom_navigation.R;
 import java.lang.reflect.Array;
 
 public class Res_Profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    TextInputEditText email, phone, address, password;
+    TextInputEditText rname, oname, email, phone, address, password;
     ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_res__profile);
+
+        rname = (TextInputEditText) findViewById(R.id.rname);
+        oname = (TextInputEditText) findViewById(R.id.oname);
         email = (TextInputEditText) findViewById(R.id.email);
         phone = (TextInputEditText) findViewById(R.id.phone);
         address =(TextInputEditText) findViewById(R.id.address);
@@ -34,12 +37,14 @@ public class Res_Profile extends AppCompatActivity implements NavigationView.OnN
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("Restaurant", MODE_PRIVATE);
-        email.setText(sharedPreferences.getString("Email", "123"));
-        phone.setText(sharedPreferences.getString("Phone", "123"));
-        address.setText(sharedPreferences.getString("Address", "123"));
-        password.setText(sharedPreferences.getString("Password", "123"));
+        rname.setText(sharedPreferences.getString("Rname", "???"));
+        oname.setText(sharedPreferences.getString("Oname", "???"));
+        email.setText(sharedPreferences.getString("Email", "???"));
+        phone.setText(sharedPreferences.getString("Phone", "???"));
+        address.setText(sharedPreferences.getString("Address", "???"));
+        password.setText(sharedPreferences.getString("Password", "???"));
         img.setImageURI(Uri.parse(sharedPreferences.getString("Profile", "???")));
-
+        
 
     }
 

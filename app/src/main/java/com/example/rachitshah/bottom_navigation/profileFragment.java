@@ -17,7 +17,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class profileFragment extends Fragment {
     ImageView img;
-    TextInputEditText email, add, pswd, phone;
+    TextInputEditText email, add, pswd, phone, name;
 
 
     @Override
@@ -25,6 +25,7 @@ public class profileFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        name = (TextInputEditText) view.findViewById(R.id.name);
         email = (TextInputEditText) view.findViewById(R.id.prof_email);
         add = (TextInputEditText) view.findViewById(R.id.prof_address);
         pswd = (TextInputEditText) view.findViewById(R.id.prof_pswd);
@@ -33,10 +34,11 @@ public class profileFragment extends Fragment {
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("Volunteer", MODE_PRIVATE);
 
-        email.setText(sharedPreferences.getString("Email", "!!!"));
-        pswd.setText(sharedPreferences.getString("Password", "!!!"));
-        add.setText(sharedPreferences.getString("Address", "!!!"));
-        phone.setText(sharedPreferences.getString("Phone", "!!!"));
+        name.setText(sharedPreferences.getString("Name", "???"));
+        email.setText(sharedPreferences.getString("Email", "???"));
+        pswd.setText(sharedPreferences.getString("Password", "???"));
+        add.setText(sharedPreferences.getString("Address", "???"));
+        phone.setText(sharedPreferences.getString("Phone", "???"));
         img.setImageURI(Uri.parse(sharedPreferences.getString("Profile", "???")));
 
         return view;

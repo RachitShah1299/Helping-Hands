@@ -11,14 +11,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Signup extends AppCompatActivity {
     ImageView img;
     Uri imageUri;
     private static final int PICK_IMAGE = 100;
-    EditText name, email, phone, pswd, address, lic;
+    EditText name, email, phone, pswd, address, lic, gender;
     TextView lin, sup;
     String path;
+    String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,7 @@ public class Signup extends AppCompatActivity {
         pswd = (EditText) findViewById(R.id.pass);
         address = (EditText) findViewById(R.id.add);
         lic = (EditText) findViewById(R.id.lic);
+        gender = (EditText) findViewById(R.id.gen);
         img = (ImageView) findViewById(R.id.img);
 
         //Image Selector
@@ -47,11 +54,20 @@ public class Signup extends AppCompatActivity {
         sup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Saving Data in Storage
-                savedata();
-                Intent it = new Intent(Signup.this, Main2Activity.class);
-                startActivity(it);
+                Boolean notnull;
+
+                notnull = isnotnull();
+
+                if (notnull) {
+                    savedata();
+                    Intent it = new Intent(Signup.this, Main2Activity.class);
+                    startActivity(it);
+                } else {
+                    Toast toast = Toast.makeText(Signup.this, "Something is Wrong", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
+
 
             private void savedata() {
                 SharedPreferences sharedPreferences = getSharedPreferences("Volunteer", MODE_PRIVATE);
@@ -62,12 +78,67 @@ public class Signup extends AppCompatActivity {
                 editor.putString("Address", address.getText().toString());
                 editor.putString("lic", lic.getText().toString());
                 editor.putString("Password", pswd.getText().toString());
+                editor.putString("Gender", gender.getText().toString());
                 editor.putString("Profile", path);
                 editor.commit();
 
             }
         });
 
+    }
+
+    private Boolean isnotnull() {
+        boolean notnull = false;
+        String n, e, p, ph, add, licno, gen;
+        n = name.getText().toString();
+        e = email.getText().toString();
+        p = pswd.getText().toString();
+        ph = phone.getText().toString();
+        add = address.getText().toString();
+        licno = lic.getText().toString();
+        gen  = gender.getText().toString();
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        CharSequence inputStr = e;
+
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        Boolean check = true;
+        if (n.length() == 0) {
+            name.setError("Name cannot be Empty");
+            check = false;
+        }
+        if (gen.length() == 0) {
+            gender.setError("Gender cannot be Empty");
+            check = false;
+        }
+
+
+
+        if (!matcher.matches()) {
+            email.setError("Email not Valid");
+            check = false;
+        }
+        if (p.length() == 0) {
+            pswd.setError("Password cannot be Empty");
+            check = false;
+        }
+        if (ph.length() != 10) {
+            phone.setError("Phone cannot be Empty");
+            check = false;
+        }
+        if (add.length() == 0) {
+            address.setError("Address cannot be Empty");
+            check = false;
+        }
+        if (licno.length() == 0) {
+            lic.setError("License cannot be Empty");
+            check = false;
+        }
+        if (check == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
