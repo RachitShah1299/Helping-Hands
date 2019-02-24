@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -16,6 +17,7 @@ import com.example.rachitshah.bottom_navigation.Vol_Home.Vol_home_datamodel;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
+
     ListView listView;
     Vol_home_MyBaseAdapter myBaseAdapter;
     String images[] = {"Sandwich House", "Jugaad Nights", "Kabir Restaurant", "Alimentos Restaurant"};
@@ -26,6 +28,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ImageButton btyes = (ImageButton) view.findViewById(R.id.yes);

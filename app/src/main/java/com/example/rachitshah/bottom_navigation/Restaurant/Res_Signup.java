@@ -2,11 +2,16 @@ package com.example.rachitshah.bottom_navigation.Restaurant;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,13 +34,17 @@ public class Res_Signup extends AppCompatActivity {
     ImageView img;
     TextView txt, sup;
     private static final int PICK_IMAGE = 100;
-    EditText rname, oname, email, password, mono, address, gender, birthdate, lic;
+    EditText rname, oname, email, password, mono, address, gender, lic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_res__signup);
 
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //show the activity in full screen
+
+
+        setContentView(R.layout.activity_res__signup);
         sup = (TextView) findViewById(R.id.sbtn);
         txt = (TextView) findViewById(R.id.txt);
         rname = (EditText) findViewById(R.id.rname);
@@ -46,7 +55,6 @@ public class Res_Signup extends AppCompatActivity {
         mono = (EditText) findViewById(R.id.mono);
         address = (EditText) findViewById(R.id.add);
         lic = (EditText) findViewById(R.id.lic);
-        gender=(EditText) findViewById(R.id.gen);
 
         txt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +104,6 @@ public class Res_Signup extends AppCompatActivity {
         ph = mono.getText().toString();
         add = address.getText().toString();
         licno = lic.getText().toString();
-        gen = gender.getText().toString();
         o = oname.getText().toString();
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
         CharSequence inputStr = e;
@@ -110,10 +117,6 @@ public class Res_Signup extends AppCompatActivity {
         }
         if (o.length() == 0) {
             oname.setError("Owner Name cannot be Empty");
-            check = false;
-        }
-        if (gen.length() == 0) {
-            gender.setError("Gender cannot be Empty");
             check = false;
         }
 
@@ -168,5 +171,6 @@ public class Res_Signup extends AppCompatActivity {
             path = String.valueOf(imageUri);
         }
     }
+
 
 }

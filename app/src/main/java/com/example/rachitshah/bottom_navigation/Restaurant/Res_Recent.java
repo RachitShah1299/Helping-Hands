@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.ListView;
 
 import com.example.rachitshah.bottom_navigation.Feedback;
@@ -28,6 +29,10 @@ public class Res_Recent extends AppCompatActivity implements NavigationView.OnNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //show the activity in full screen
+
         setContentView(R.layout.activity_res__recent);
 
         listView = (ListView) findViewById(R.id.Res_rec_liv);

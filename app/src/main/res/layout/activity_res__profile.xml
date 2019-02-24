@@ -19,8 +19,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="270dp">
-
-
+                <!--
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="40dp"
@@ -33,7 +32,7 @@
                     android:layout_marginBottom="22dp"
                     android:elevation="15px"
                     android:src="@drawable/camm" />
-
+                    -->
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile"
                     android:layout_width="120dp"
@@ -42,7 +41,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="122dp"
                     android:elevation="10px"
-                    android:src="@drawable/usrusr" />
+                    android:src="@drawable/profile1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -54,6 +53,7 @@
 
                 </LinearLayout>
             </RelativeLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -68,6 +68,7 @@
                     android:textSize="20dp" />
 
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

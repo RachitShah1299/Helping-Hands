@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -21,10 +22,15 @@ import java.lang.reflect.Array;
 
 public class Res_Profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     TextInputEditText rname, oname, email, phone, address, password;
+    String path;
     ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //show the activity in full screen
+
         setContentView(R.layout.activity_res__profile);
 
         rname = (TextInputEditText) findViewById(R.id.rname);
@@ -43,8 +49,12 @@ public class Res_Profile extends AppCompatActivity implements NavigationView.OnN
         phone.setText(sharedPreferences.getString("Phone", "???"));
         address.setText(sharedPreferences.getString("Address", "???"));
         password.setText(sharedPreferences.getString("Password", "???"));
-        img.setImageURI(Uri.parse(sharedPreferences.getString("Profile", "???")));
-        
+        path = Uri.parse(sharedPreferences.getString("Profile", "Ad")).toString();
+
+        if (path!=null){
+            img.setImageURI(Uri.parse(sharedPreferences.getString("Profile", String.valueOf(Integer.valueOf(R.drawable.profile1)))));
+        }
+
 
     }
 

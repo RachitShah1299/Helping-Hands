@@ -1,5 +1,6 @@
 package com.example.rachitshah.bottom_navigation;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -8,28 +9,40 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Signup extends AppCompatActivity {
-    ImageView img;
-    Uri imageUri;
-    private static final int PICK_IMAGE = 100;
-    EditText name, email, phone, pswd, address, lic, gender;
-    TextView lin, sup;
     String path;
+    Uri imageUri;
+    ImageView img;
+    Spinner gender;
+    TextView lin, sup;
+    private static final int PICK_IMAGE = 100;
+    EditText name, email, phone, pswd, address, lic, dob;
+
     String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //show the activity in full screen
+
         setContentView(R.layout.activity_signup);
+
 
         sup = (TextView) findViewById(R.id.sbtn);
         name = (EditText) findViewById(R.id.name);
@@ -38,9 +51,40 @@ public class Signup extends AppCompatActivity {
         pswd = (EditText) findViewById(R.id.pass);
         address = (EditText) findViewById(R.id.add);
         lic = (EditText) findViewById(R.id.lic);
-        gender = (EditText) findViewById(R.id.gen);
-        img = (ImageView) findViewById(R.id.img);
+        img = (ImageView) findViewById(R.id.profile);
+        dob = (EditText) findViewById(R.id.dob);
+        gender = (Spinner) findViewById(R.id.gen);
+        lin = (TextView)findViewById(R.id.login);
+        dob.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    Calendar crdate = Calendar.getInstance();
+                    int yr = crdate.get(Calendar.YEAR);
+                    int mn = crdate.get(Calendar.MONTH);
+                    int dd = crdate.get(Calendar.DAY_OF_MONTH);
 
+                    DatePickerDialog datePickerDialog;
+                    datePickerDialog = new DatePickerDialog(Signup.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                            dob.setText(year + "-" + month + "-" + dayOfMonth);
+                        }
+                    }, yr, mn, dd);
+
+                    datePickerDialog.setTitle("Select_Date");
+                    datePickerDialog.show();
+                }
+            }
+        });
+
+        lin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Signup.this, Login.class);
+                startActivity(intent);
+            }
+        });
         //Image Selector
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +122,7 @@ public class Signup extends AppCompatActivity {
                 editor.putString("Address", address.getText().toString());
                 editor.putString("lic", lic.getText().toString());
                 editor.putString("Password", pswd.getText().toString());
-                editor.putString("Gender", gender.getText().toString());
+                editor.putString("Gender", gender.getSelectedItem().toString());
                 editor.putString("Profile", path);
                 editor.commit();
 
@@ -89,14 +133,15 @@ public class Signup extends AppCompatActivity {
 
     private Boolean isnotnull() {
         boolean notnull = false;
-        String n, e, p, ph, add, licno, gen;
+        String n, e, p, ph, add, licno, gen, bd;
         n = name.getText().toString();
         e = email.getText().toString();
         p = pswd.getText().toString();
         ph = phone.getText().toString();
         add = address.getText().toString();
         licno = lic.getText().toString();
-        gen  = gender.getText().toString();
+        gen = gender.getSelectedItem().toString();
+        bd = dob.getText().toString();
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
         CharSequence inputStr = e;
 
@@ -108,10 +153,13 @@ public class Signup extends AppCompatActivity {
             check = false;
         }
         if (gen.length() == 0) {
-            gender.setError("Gender cannot be Empty");
+            gender.setPrompt("Gender cannot be Empty");
             check = false;
         }
-
+        if (bd.length() == 0) {
+            dob.setError("Date of birth cannot be Empty");
+            check = false;
+        }
 
 
         if (!matcher.matches()) {

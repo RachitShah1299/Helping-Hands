@@ -19,6 +19,13 @@
     <string name="Open_Navigation">Open Navigation</string>
     <string name="Close_Navigation">Close Navigation</string>
 
+    <string name="Gender_Prompt">Gender</string>
+    <string-array name="Gender">
+        <item name="Gender">Male</item>
+        <item name="Gender">Female</item>
+        <item name="Gender">Others</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_bottom">BottomActivity</string>
