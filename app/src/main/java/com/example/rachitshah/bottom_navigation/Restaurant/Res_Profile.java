@@ -3,6 +3,7 @@ package com.example.rachitshah.bottom_navigation.Restaurant;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TextInputEditText;
@@ -12,18 +13,24 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.rachitshah.bottom_navigation.R;
 
 import java.lang.reflect.Array;
 
 public class Res_Profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    TextInputEditText rname, oname, email, phone, address, password;
     String path;
-    ImageView img;
+    Uri imageUri;
+    ImageView img, save;
+    private static final int PICK_IMAGE = 100;
+    TextInputEditText rname, oname, email, phone, address, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +44,20 @@ public class Res_Profile extends AppCompatActivity implements NavigationView.OnN
         oname = (TextInputEditText) findViewById(R.id.oname);
         email = (TextInputEditText) findViewById(R.id.email);
         phone = (TextInputEditText) findViewById(R.id.phone);
-        address =(TextInputEditText) findViewById(R.id.address);
-        password =(TextInputEditText) findViewById(R.id.password);
+        address = (TextInputEditText) findViewById(R.id.address);
+        password = (TextInputEditText) findViewById(R.id.password);
         img = (ImageView) findViewById(R.id.profile);
+        save = (ImageButton) findViewById(R.id.save);
 
+
+        getData();
+
+
+
+
+    }
+
+    private void getData() {
 
         SharedPreferences sharedPreferences = getSharedPreferences("Restaurant", MODE_PRIVATE);
         rname.setText(sharedPreferences.getString("Rname", "???"));
@@ -49,13 +66,7 @@ public class Res_Profile extends AppCompatActivity implements NavigationView.OnN
         phone.setText(sharedPreferences.getString("Phone", "???"));
         address.setText(sharedPreferences.getString("Address", "???"));
         password.setText(sharedPreferences.getString("Password", "???"));
-        path = Uri.parse(sharedPreferences.getString("Profile", "Ad")).toString();
-
-        if (path!=null){
-            img.setImageURI(Uri.parse(sharedPreferences.getString("Profile", String.valueOf(Integer.valueOf(R.drawable.profile1)))));
-        }
-
-
+        img.setImageURI(Uri.parse(sharedPreferences.getString("Profile", "???")));
     }
 
 
